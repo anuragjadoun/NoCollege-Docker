@@ -1,0 +1,54 @@
+
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: notes-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: anuragjadoun024@gmail
+      MYSQL_DATABASE: notesapp
+    ports:
+      - "3307:3306"
+    networks:
+      - notes-network
+  backend:
+    build:
+      context: ./backend
+    container_name: notes-backend
+    restart: always
+    ports:
+      - "8080:8080"
+
+    environment:
+        DB_USERNAME: ${DB_USERNAME}
+        DB_PASSWORD: ${DB_PASSWORD}
+        GROQ_API_KEY: ${GROQ_API_KEY}
+        RAZORPAY_KEY: ${RAZORPAY_KEY}
+        RAZORPAY_SECRET: ${RAZORPAY_SECRET}
+    volumes:
+      - ./backend/uploads:/app/uploads
+    depends_on:
+      - mysql
+    networks:
+      - notes-network
+  frontend:
+    build:
+      context: ./frontend
+    container_name: notes-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - notes-network
+  notification-service:
+    build:
+      context: ./backend-notification-microservice1
+    container_name: notification-service
+    ports:
+      - "8081:8081"
+    networks:
+      - notes-network
+networks:
+  notes-network:
