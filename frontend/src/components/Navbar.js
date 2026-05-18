@@ -365,7 +365,7 @@ const fetchUnreadCount =
           <img
             src={
               localStorage.getItem("profileImage")
-                ? `http://localhost:8080/${localStorage.getItem("profileImage")}`
+                ? `${import.meta.env.VITE_API_URL}/${localStorage.getItem("profileImage")}`
                 : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
             }
             alt="profile"

@@ -174,7 +174,7 @@ className="
     src={
       userProfiles[feedback.email]
         ?.profileImage
-        ? `http://localhost:8080/${
+        ? `${import.meta.env.VITE_API_URL}/${
             userProfiles[
               feedback.email
             ].profileImage

@@ -110,7 +110,7 @@ export default function UserProfile() {
               <img
                 src={
                   user.profileImage
-                    ? `http://localhost:8080/${user.profileImage}`
+                    ? `${import.meta.env.VITE_API_URL}/${user.profileImage}`
                     : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
                 }
                 alt="profile"

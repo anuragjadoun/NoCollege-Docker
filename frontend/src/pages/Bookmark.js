@@ -138,7 +138,7 @@ export default function Bookmarks() {
                     </p>
 
                     <a
-                      href={`http://localhost:8080/${note.filePath}`}
+                      href={`${import.meta.env.VITE_API_URL}/${note.filePath}`}
 
                       target="_blank"
 

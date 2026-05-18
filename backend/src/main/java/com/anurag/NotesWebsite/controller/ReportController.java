@@ -149,7 +149,7 @@ public class ReportController {
 
         restTemplate.postForObject(
 
-                "http://localhost:8081/email/send",
+                "https://nocollege-docker-1.onrender.com/email/send",
 
                 entity,
 
@@ -251,7 +251,7 @@ public class ReportController {
 
             restTemplate.postForObject(
 
-                    "http://localhost:8081/email/send",
+                    "https://nocollege-docker-1.onrender.com/email/send",
 
                     entity,
 

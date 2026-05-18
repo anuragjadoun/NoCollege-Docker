@@ -123,7 +123,7 @@ export default function Downloads() {
     <div className="flex gap-2 mt-3">
 
       <a
-        href={`http://localhost:8080/${d.filePath}`}
+        href={`${import.meta.env.VITE_API_URL}/${d.filePath}`}
         target="_blank"
         rel="noreferrer"
         className="

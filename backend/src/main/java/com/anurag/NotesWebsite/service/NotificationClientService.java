@@ -17,7 +17,7 @@ public class NotificationClientService {
     private RestTemplate restTemplate;
 
     private final String NOTIFICATION_URL =
-            "http://localhost:8081/email/send";
+            "https://nocollege-docker-1.onrender.com/email/send";
 
     public void sendEmail(
             String to,

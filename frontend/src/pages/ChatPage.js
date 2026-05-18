@@ -115,9 +115,7 @@ const [editedText, setEditedText] =
     fetchChatUser();
 
     const socket =
-      new SockJS(
-        "http://localhost:8080/chat"
-      );
+      new SockJS(`${import.meta.env.VITE_API_URL}/chat`);
 
     const client =
       new Client({
@@ -312,7 +310,7 @@ const editMessage =
 
       chatUser?.profileImage
 
-        ? `http://localhost:8080/${chatUser.profileImage}`
+        ? `${import.meta.env.VITE_API_URL}/${chatUser.profileImage}`
 
         : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
     }
