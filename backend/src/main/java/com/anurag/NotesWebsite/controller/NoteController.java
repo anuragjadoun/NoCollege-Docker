@@ -318,7 +318,7 @@ public class NoteController {
         String email = jwtUtil.extractEmail(token);
 
         // ADMIN CHECK (CHANGE EMAIL HERE)
-        if (!email.equals("anurag11@gmail.com")) {
+        if (!email.equals("anuragjadoun024@gmail.com")) {
             throw new RuntimeException("Access Denied ❌");
         }
 

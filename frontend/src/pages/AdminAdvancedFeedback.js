@@ -21,7 +21,7 @@ export default function AdminAdvancedFeedback() {
 
     // ONLY ADMIN ACCESS
 
-    if (userEmail !== "anurag11@gmail.com") {
+    if (userEmail !== "anuragjadoun024@gmail.com") {
 
       alert("Access Denied ❌");
 
